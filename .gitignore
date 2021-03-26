@@ -1,0 +1,10 @@
+staticfiles/
+media/
+static/
+untitled*.py
+.spyproject/
+*.log
+*.sqlite
+*.pyc
+*.pyo
+_pycache/

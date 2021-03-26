@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href={% static "css/home-page.css" %}></link>
+{% endblock style %}
+{% block script %}
+<script type="text/javascript" src={% static "js/home_page.js" %} ></script>
+{% endblock script %}
+{% block content %}
+<nav class="site-header py-1 sticky-top" style="background-color: black;">
+    <div class="d-flex flex-column flex-md-row justify-content-around">
+        <!--<a class="py-2 d-none d-md-inline-block" href="#">Feature</a>-->
+        <span class="rgb-value">a</span><span class="color-name">b</span><span class="color-preview"></span><span class="dimension">d</span>
+    </div>
+</nav>
+<div class="enclosure">
+    <div id="drop_zone">
+      <canvas id="canvas" class="d-none"></canvas>
+      <p class="drop-text">Drop Files</p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+.enclosure{
+    display: flex;
+    justify-content: center;
+}
+.site-header span{
+    color: white;
+}
+.color-preview{
+    width: 300px;
+    border: thin solid white;
+    text-align: center;
+}
+#drop_zone {
+    position: relative;
+    border: 3px solid blue;
+    display: flex;
+    top: 200px;
+    width: 500px;
+    height: 300px;
+    background-color: royalblue;
+    justify-content: center;    
+}
+.drop-text{
+    color: white;
+    font-size: xx-large;
+    font-family: cursive;
+    align-self: center;
+}
