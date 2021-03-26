@@ -5,6 +5,12 @@
 .site-header span{
     color: white;
 }
+#file-button{
+    width: 100%;
+    color: black;
+    font-size: large;
+    font-family: cursive;    
+}
 .color-preview{
     width: 300px;
     border: thin solid white;
@@ -19,10 +25,10 @@
     height: 300px;
     background-color: royalblue;
     justify-content: center;    
+    align-items: center;
 }
 .drop-text{
     color: white;
     font-size: xx-large;
     font-family: cursive;
-    align-self: center;
 }

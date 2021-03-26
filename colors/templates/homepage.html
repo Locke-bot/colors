@@ -16,7 +16,11 @@
 <div class="enclosure">
     <div id="drop_zone">
       <canvas id="canvas" class="d-none"></canvas>
-      <p class="drop-text">Drop Files</p>
+      <div>
+          <p class="drop-text">Drop Files</p>
+          <label style="width: 100%;" for="file-select"><button id="file-button">select image</button></label>
+      </div>
+      <input type="file" accept="image/*" id="file-select" class="d-none">
     </div>
 </div>
 {% endblock content %}
