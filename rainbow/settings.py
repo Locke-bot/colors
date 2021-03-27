@@ -124,5 +124,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'bootstrap'), os.path.join(BASE_DIR, STATIC_URL[1:-1]))
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'bootstrap'), )
-print(os.path.join(BASE_DIR, 'bootstrap'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 AUTH_USER_MODEL = 'colors.RainbowUser'
