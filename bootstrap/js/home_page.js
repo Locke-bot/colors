@@ -20,7 +20,8 @@ function pick(event, destination) {
   var data = pixel.data;
   console.log('data', data)
     r = data[0]; g = data[1]; b = data[2]; a = data[3];
-    const rgba = `rgba(${r}, ${g}, ${b}, ${a / 255})`;
+    //const rgba = `rgba(${r}, ${g}, ${b}, ${a / 255})`;
+    const rgba = `rgba(${r}, ${g}, ${b})`; // leaving out opacity
     destination.style.background = rgba;
     destination.textContent = rgba +' ' + hexify(r, g, b);
     if (r>255/2 && g>255/2 && b>255/2){ destination.style.color='black' }
@@ -125,8 +126,6 @@ function addToCanvas(file){
         console.log(frd)
         frd.readAsDataURL(file)
         //dropZone.empty()
-        dropZone.css('width', 'auto')
-        dropZone.css('height', 'auto')
         //image.appendTo(dropZone)
         
         img.onload = function() {
@@ -140,6 +139,8 @@ function addToCanvas(file){
             $('p.drop-text').remove()
             $('#file-button').parent().remove()
         	ctx.drawImage(img, 0, 0);
+            dropZone.css('width', 'auto')
+            dropZone.css('height', 'auto')
         	canvas.removeClass('d-none')
         };
     }
@@ -158,11 +159,12 @@ $("#drop_zone").on('drop', function(ev) {
       // If dropped items aren't files, reject them
       item = ev.dataTransfer.items[i]
       if (item.kind === 'file') {
-        var file = item.getAsFile();
-        console.log('... file[' + i + '].name = ' + file.name, file, 'iff');
-        addToCanvas(file)
-        //image = $('<img>')
-    
+        if (item.type.startsWith('image')){
+            var file = item.getAsFile();
+            console.log('... file[' + i + '].name = ' + file.name, file, 'iff');
+            addToCanvas(file)
+            //image = $('<img>')
+        }
       }
     }
   } else {

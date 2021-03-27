@@ -11,7 +11,7 @@
     font-size: large;
     font-family: cursive;    
 }
-.color-preview{
+.color-preview, .color-name{
     width: 300px;
     border: thin solid white;
     text-align: center;
