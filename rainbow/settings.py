@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'x5q@-1g#zmza8scib++8_@q%_1a#+_boz=2%2ew(x@49m)lflb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sleepy-gorge-15547.herokuapp.com']
 
 # Application definition
 
