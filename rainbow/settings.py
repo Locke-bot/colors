@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'rainbow.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'rainbow', 
+        'NAME': 'rainbow',
         'USER': 'postgres', 
         'PASSWORD': 'LockeLamora',
         'HOST': '127.0.0.1', 
