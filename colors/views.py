@@ -17,20 +17,20 @@ def subtract_list(a, b): # returns absolute, a is the reference
 def calc_resultant(a):
     return math.sqrt(sum([i**2 for i in a]))
 
-def color_adam(rgb): # a spin on namer, the input is an rgb array in that order.
-    print(rgb, 'KGB')
-    rgb_query = Color.objects.filter(rgb=rgb)
+def color_adam(r, g, b): # a spin on namer, the input is an rgb array in that order.
+    print(r, g, b, 'KGB')
+    rgb_query = Color.objects.filter(red=r, green=g, blue=b)
     print(rgb_query, '..,.,/,.')
     if rgb_query.exists():
         rgb_query = rgb_query[0]
-        return rgb_query.name, rgb
+        return rgb_query.name, [r, g, b]
     
     mini = float('inf')
     closest_color = None
     closest_rgb = None
     for color in all_colors:
-        RGB = color.rgb
-        diff_list = subtract_list(rgb, RGB)
+        RGB = [color.red, color.green, color.blue]
+        diff_list = subtract_list([r, g, b], RGB)
         if mini > max(diff_list):
             mini = calc_resultant(diff_list)
             closest_color = color.name
@@ -45,7 +45,7 @@ def HomePageView(request):
         print(post, 'postal service')
         if post.get('name') == 'color-name':
             ajax_rgb = [int(i) for i in post['rgb'].split(',')]
-            res = color_adam(ajax_rgb) 
+            res = color_adam(*ajax_rgb) 
             # for some reason, [] was added somewhere along the pipeline
             print(res)
             print(f'ajax took {time.time() - start}')
