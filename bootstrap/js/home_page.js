@@ -130,7 +130,7 @@ function addToCanvas(file){
         
         img.onload = function() {
             console.log(img, img.width, img.height, $(window).height())
-            if (img.height > $(window).height()) {
+            if ($(document).height > $(window).height()) {
                     dropZone.css('position', 'initial')
                 }
             cs.width=img.width
